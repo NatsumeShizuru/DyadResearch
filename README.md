@@ -7,6 +7,8 @@ DyadResearch 是一个面向 A 股的独立研究平台：管理只读历史数�
 ## 5 分钟运行
 
 ```powershell
+git clone https://github.com/NatsumeShizuru/DyadResearch.git
+cd DyadResearch
 py -3.12 -m venv .venv
 .venv\Scripts\python -m pip install -e ".[research,web,dev]"
 .venv\Scripts\dyadresearch demo generate-data
@@ -36,7 +38,7 @@ flowchart LR
     B --> T["DyadTetrade\nPaper / qmt_sim / controlled live"]
 ```
 
-DyadResearch 负责共享库的只读历史查询、PIT 财务、复权、因子、回测、实验和研究报告。DyadTetrade 负责本机 XtData 下载/共享导入控制面，以及实时行情、Paper/QMT 执行、OMS、风控、账户、对账和监控。两端不共享 Python 内部实现；Research 只通过 loopback HTTP 请求数据控制面，策略发布仍只使用版本化 `StrategyReleaseBundle`。
+DyadResearch 负责共享库的只读历史查询、PIT 财务、复权、因子、回测、实验和研究报告。[DyadTetrade](https://github.com/NatsumeShizuru/DyadTetrade) 负责本机 XtData 下载/共享导入控制面，以及实时行情、Paper/QMT 执行、OMS、风控、账户、对账和监控。两端不共享 Python 内部实现；Research 只通过 loopback HTTP 请求数据控制面，策略发布仍只使用版本化 `StrategyReleaseBundle`。
 
 ## 主要能力
 
